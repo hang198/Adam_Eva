@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam_Eva</title>
+</head>
+<body>
+<script>
+    let Apple = function () {
+        this.weight = 10;
+        this.decrease = function () {
+            if (this.weight > 0) {
+                this.weight--;
+            }
+        };
+        this.isEmpty = function () {
+            return false;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+    };
+    let Human = function () {
+        this.name = "";
+        this.gender = true;
+        this.weight = 0;
+
+        this.isMale = function () {
+            return this.gender;
+        };
+        this.setGender = function (gender) {
+            this.gender = gender;
+        };
+        this.checkApple = function (apple) {
+            return apple.weight > 0;
+        };
+        this.eat = function (apple) {
+            if (this.checkApple(apple)) {
+                this.weight++;
+                apple.decrease();
+            }
+        };
+        this.say = function (say) {
+            console.log(say);
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setWeight = function (weight) {
+          this.weight = weight;
+        };
+    };
+    let apple = new Apple();
+    console.log(apple.getWeight());
+
+    let adam = new Human();
+
+    adam.setName('Adam');
+    console.log(adam.getName());
+    adam.setWeight(70);
+    adam.getWeight();
+    adam.say('I will eat apple. Do you want to eat?');
+    adam.eat(apple);
+    adam.eat(apple);
+    adam.eat(apple);
+    console.log(adam.getWeight());
+    console.log(apple.getWeight());
+
+    let eva = new Human();
+
+    eva.setName('Eva');
+    console.log(eva.getName());
+    eva.setWeight(40);
+    eva.getWeight();
+    eva.say('Of course! I want to eat too but I will eat only one!');
+    eva.eat(apple);
+    eva.eat(apple);
+    eva.eat(apple);
+    eva.eat(apple);
+    eva.eat(apple);
+    eva.eat(apple);
+    eva.eat(apple);
+    console.log(eva.getWeight());
+    console.log(apple.getWeight());
+    console.log(adam.getName());
+    adam.say('Only one of you ? Why you eat all apple? Nooooooooooooo.....Give back to me!');
+    console.log(eva.getName());
+    eva.say('kkkkkkkkkkkk. You are stupid!');
+</script>
+</body>
+</html>
